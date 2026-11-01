@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKN WEBSITE | Gaming Universe</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080b12;
+  --card: #111725;
+  --blue: #387cff;
+  --cyan: #00e5ff;
+  --text: #f3f6ff;
+  --muted: #8995ac;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+/* BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: -250px;
+  left: -200px;
+  background: #1649ff;
+  filter: blur(180px);
+  opacity: .15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* HEADER */
+
+header {
+  height: 78px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(8,11,18,.88);
+  border-bottom: 1px solid #ffffff12;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(18px);
+}
+
+.logo {
+  font-family: Orbitron;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span { color: var(--blue); }
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  color: #aeb8cb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .3s;
+}
+
+nav a:hover { color: white; }
+
+.header-btn {
+  background: var(--blue);
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.header-btn:hover {
+  box-shadow: 0 0 25px #387cff80;
+  transform: translateY(-2px);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 27px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 590px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 50%, #173d8d55, transparent 45%),
+    linear-gradient(120deg, #080b12, #0c1427);
+}
+
+.hero-content {
+  max-width: 650px;
+  z-index: 2;
+  animation: appear 1s ease;
+}
+
+.tag {
+  color: var(--cyan);
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: Orbitron;
+  font-size: clamp(38px, 6vw, 75px);
+  line-height: 1.13;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--blue);
+  text-shadow: 0 0 35px #387cff90;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 510px;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition: .3s;
+}
+
+.primary-btn {
+  background: var(--blue);
+  color: white;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px #387cff65;
+}
+
+.secondary-btn {
+  background: #ffffff0a;
+  border-color: #ffffff25;
+  color: white;
+}
+
+.secondary-btn:hover { background: #ffffff19; }
+
+.hero-visual {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  border: 1px solid #387cff55;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 100px #1649ff30, inset 0 0 80px #1649ff20;
+  animation: float 5s ease-in-out infinite;
+}
+
+.hero-visual .symbol {
+  font-size: 155px;
+  filter: drop-shadow(0 0 35px #387cff);
+}
+
+.orbit {
+  position: absolute;
+  width: 110%;
+  height: 45%;
+  border: 2px solid #00e5ff55;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+}
+
+/* STATS */
+
+.stats {
+  padding: 28px 7%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border-top: 1px solid #ffffff10;
+  border-bottom: 1px solid #ffffff10;
+  background: #0d121d;
+  text-align: center;
+}
+
+.stat h2 {
+  color: var(--cyan);
+  font-family: Orbitron;
+  font-size: 27px;
+}
+
+.stat p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+/* GAMES */
+
+.games-section {
+  padding: 90px 7%;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+
+.section-head h2 {
+  font-family: Orbitron;
+  font-size: clamp(23px, 3vw, 35px);
+}
+
+.section-head p {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.search {
+  background: #111725;
+  border: 1px solid #ffffff20;
+  color: white;
+  padding: 13px 17px;
+  border-radius: 9px;
+  width: 220px;
+  outline: none;
+}
+
+.search:focus { border-color: var(--blue); }
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter {
+  background: #111725;
+  color: #aab5c9;
+  border: 1px solid #ffffff12;
+  border-radius: 7px;
+  padding: 10px 17px;
+  transition: .3s;
+}
+
+.filter.active, .filter:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.game-card {
+  background: var(--card);
+  border: 1px solid #ffffff12;
+  border-radius: 13px;
+  overflow: hidden;
+  transition: .35s;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  border-color: #387cff99;
+  box-shadow: 0 15px 40px #0008;
+}
+
+.game-cover {
+  height: 190px;
+  display: grid;
+  place-items: center;
+  font-size: 75px;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, #111725);
+}
+
+.cover-1 { background: linear-gradient(135deg,#102e63,#387cff); }
+.cover-2 { background: linear-gradient(135deg,#441a71,#ba39ff); }
+.cover-3 { background: linear-gradient(135deg,#135b47,#00d9a5); }
+.cover-4 { background: linear-gradient(135deg,#65351b,#ff8739); }
+.cover-5 { background: linear-gradient(135deg,#172c54,#00bde8); }
+.cover-6 { background: linear-gradient(135deg,#571a30,#ff365d); }
+
+.game-icon {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px #ffffff65);
+}
+
+.game-info { padding: 20px; }
+
+.game-info h3 {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+.game-info p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 42px;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #8fa0bc;
+  font-size: 11px;
+  margin: 17px 0;
+}
+
+.play-btn {
+  width: 100%;
+  background: #1b3156;
+  border: 1px solid #387cff55;
+  color: white;
+  padding: 12px;
+  border-radius: 7px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.play-btn:hover {
+  background: var(--blue);
+}
+
+/* FEATURE */
+
+.feature {
+  margin: 20px 7% 90px;
+  padding: 55px;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 80% 50%,#387cff55,transparent 45%),
+    linear-gradient(120deg,#101a30,#142b4c);
+  border: 1px solid #387cff45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.feature h2 {
+  font-family: Orbitron;
+  font-size: 27px;
+  margin: 15px 0;
+}
+
+.feature p {
+  color: #a7b6ce;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.feature-icon {
+  font-size: 110px;
+  filter: drop-shadow(0 0 30px #387cff);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid #ffffff15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  gap: 15px;
+}
+
+footer strong { color: white; }
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #000d;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.show { display: flex; }
+
+.modal-content {
+  background: #111a2b;
+  border: 1px solid #387cff66;
+  border-radius: 15px;
+  padding: 35px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 60px #1649ff30;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 25px;
+}
+
+.modal-content h2 {
+  font-family: Orbitron;
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+#gameArea {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  margin: 15px 0;
+  color: #b9c8df;
+}
+
+.game-action {
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#target {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 35px var(--cyan);
+  border: none;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 15px)); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+  .hero-visual {
+    opacity: .25;
+    right: -100px;
+  }
+  .game-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@media(max-width:650px) {
+  header { padding: 0 5%; }
+  .menu-btn { display: block; }
+  .header-btn { display: none; }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    background: #0d1423;
+    padding: 25px;
+    flex-direction: column;
+    gap: 22px;
+    border-bottom: 1px solid #ffffff20;
+  }
+
+  nav.open { display: flex; }
+
+  .hero {
+    min-height: 560px;
+    padding: 75px 6%;
+  }
+
+  .hero-visual {
+    width: 250px;
+    height: 250px;
+    right: -120px;
+  }
+
+  .hero-visual .symbol { font-size: 100px; }
+
+  .stats { padding: 25px 3%; }
+  .stat h2 { font-size: 20px; }
+  .stat p { font-size: 10px; }
+
+  .games-section { padding: 65px 5%; }
+
+  .section-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search { width: 100%; }
+
+  .game-grid { grid-template-columns: 1fr; }
+
+  .feature {
+    margin: 10px 5% 60px;
+    padding: 30px;
+  }
+
+  .feature-icon { font-size: 65px; }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AKN<span>.</span></div>
+
+  <nav id="nav">
+    <a href="#home">Главная</a>
+    <a href="#games">Игры</a>
+    <a href="#about">О проекте</a>
+  </nav>
+
+  <button class="header-btn"
+    onclick="document.querySelector('#games').scrollIntoView()">
+    Играть сейчас
+  </button>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">WELCOME TO THE FUTURE</div>
+
+    <h1>
+      YOUR GAME.<br>
+      YOUR <span>WORLD.</span>
+    </h1>
+
+    <p>
+      Добро пожаловать в AKN WEBSITE — игровую вселенную,
+      где тебя ждут интересные игры, новые испытания
+      и незабываемые эмоции.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="primary-btn"
+        onclick="document.querySelector('#games').scrollIntoView()">
+        ⚡ Начать играть
+      </button>
+
+      <button class="secondary-btn"
+        onclick="document.querySelector('#about').scrollIntoView()">
+        О проекте
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="orbit"></div>
+    <div class="symbol">🎮</div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <h2>06+</h2>
+    <p>ИГРОВЫХ КАТЕГОРИЙ</p>
+  </div>
+  <div class="stat">
+    <h2>24/7</h2>
+    <p>ИГРОВАЯ ВСЕЛЕННАЯ</p>
+  </div>
+  <div class="stat">
+    <h2>100%</h2>
+    <p>ЭМОЦИЙ</p>
+  </div>
+</section>
+
+<section class="games-section" id="games">
+
+  <div class="section-head">
+    <div>
+      <div class="tag">EXPLORE GAMES</div>
+      <h2>ВЫБЕРИ СВОЮ ИГРУ</h2>
+      <p>Найди игру по душе и испытай свои навыки.</p>
+    </div>
+
+    <input
+      class="search"
+      id="search"
+      placeholder="🔍 Поиск игр..."
+      oninput="renderGames()">
+  </div>
+
+  <div class="filters">
+    <button class="filter active" onclick="setFilter('all',this)">Все</button>
+    <button class="filter" onclick="setFilter('action',this)">Экшен</button>
+    <button class="filter" onclick="setFilter('sport',this)">Спорт</button>
+    <button class="filter" onclick="setFilter('logic',this)">Логика</button>
+  </div>
+
+  <div class="game-grid" id="gameGrid"></div>
+
+</section>
+
+<section class="feature" id="about">
+  <div>
+    <div class="tag">ABOUT AKN WEBSITE</div>
+    <h2>ИГРАЙ. СОЗДАВАЙ. ПОБЕЖДАЙ.</h2>
+    <p>
+      AKN WEBSITE — это современный игровой проект,
+      созданный для любителей интерактивных развлечений.
+      Открывай игры, проверяй свои способности и получай удовольствие!
+    </p>
+  </div>
+
+  <div class="feature-icon">🚀</div>
+</section>
+
+<footer>
+  <div class="logo">AKN<span>.</span></div>
+  <p>© 2026 AKN WEBSITE. All rights reserved.</p>
+  <p>MADE WITH ⚡ BY AKN</p>
+</footer>
+
+<!-- GAME WINDOW -->
+
+<div class="modal" id="modal" onclick="outsideClose(event)">
+  <div class="modal-content">
+    <button class="close" onclick="closeGame()">×</button>
+
+    <div class="tag">AKN MINI GAME</div>
+    <h2 id="modalTitle">REACTION TEST</h2>
+
+    <div id="gameArea">
+      Нажми кнопку, чтобы начать игру!
+    </div>
+
+    <button class="game-action" id="startBtn"
+      onclick="startGame()">
+      НАЧАТЬ
+    </button>
+  </div>
+</div>
+
+<script>
+
+const games = [
+  {
+    name: "Reaction Test",
+    icon: "⚡",
+    category: "action",
+    type: "reaction",
+    desc: "Проверь скорость своей реакции!",
+    level: "Лёгкий",
+    cover: "cover-1"
+  },
+  {
+    name: "Memory Challenge",
+    icon: "🧠",
+    category: "logic",
+    type: "memory",
+    desc: "Запоминай последовательность цветов.",
+    level: "Средний",
+    cover: "cover-2"
+  },
+  {
+    name: "Football Challenge",
+    icon: "⚽",
+    category: "sport",
+    type: "football",
+    desc: "Забивай голы и набирай очки.",
+    level: "Средний",
+    cover: "cover-3"
+  },
+  {
+    name: "Speed Clicker",
+    icon: "👆",
+    category: "action",
+    type: "clicker",
+    desc: "Сколько раз сможешь нажать за 10 секунд?",
+    level: "Лёгкий",
+    cover: "cover-4"
+  },
+  {
+    name: "Number Puzzle",
+    icon: "🔢",
+    category: "logic",
+    type: "number",
+    desc: "Проверь свою внимательность.",
+    level: "Сложный",
+    cover: "cover-5"
+  },
+  {
+    name: "Lucky Wheel",
+    icon: "🎡",
+    category: "sport",
+    type: "wheel",
+    desc: "Испытай удачу в колесе!",
+    level: "Лёгкий",
+    cover: "cover-6"
+  }
+];
+
+let currentFilter = "all";
+let currentGame = "";
+let timer = null;
+let clicks = 0;
+let memorySequence = [];
+let memoryPosition = 0;
+
+function renderGames() {
+  const search = document.getElementById("search").value.toLowerCase();
+
+  const filtered = games.filter(game => {
+    return (
+      (currentFilter === "all" || game.category === currentFilter) &&
+      game.name.toLowerCase().includes(search)
+    );
+  });
+
+  const grid = document.getElementById("gameGrid");
+
+  if (!filtered.length) {
+    grid.innerHTML = "<p>Игры не найдены.</p>";
+    return;
+  }
+
+  grid.innerHTML = filtered.map(game => `
+    <article class="game-card">
+      <div class="game-cover ${game.cover}">
+        <span class="game-icon">${game.icon}</span>
+      </div>
+
+      <div class="game-info">
+        <h3>${game.name}</h3>
+        <p>${game.desc}</p>
+
+        <div class="game-meta">
+          <span>🎮 AKN GAME</span>
+          <span>⭐ ${game.level}</span>
+        </div>
+
+        <button class="play-btn"
+          onclick="openGame('${game.type}')">
+          ▶ ИГРАТЬ
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function setFilter(filter, button) {
+  currentFilter = filter;
+
+  document.querySelectorAll(".filter").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+  renderGames();
+}
+
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("open");
+}
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("nav").classList.remove("open");
+  });
+});
+
+function openGame(type) {
+  clearInterval(timer);
+  currentGame = type;
+
+  const game = games.find(g => g.type === type);
+
+  document.getElementById("modalTitle").textContent = game.name;
+  document.getElementById("modal").classList.add("show");
+
+  document.getElementById("startBtn").style.display = "inline-block";
+  document.getElementById("startBtn").textContent = "НАЧАТЬ";
+  document.getElementById("gameArea").innerHTML =
+    "Готов? Нажми кнопку и начинай!";
+}
+
+function closeGame() {
+  clearInterval(timer);
+  document.getElementById("modal").classList.remove("show");
+}
+
+function outsideClose(event) {
+  if (event.target.id === "modal") closeGame();
+}
+
+function startGame() {
+  clearInterval(timer);
+
+  const area = document.getElementById("gameArea");
+  const btn = document.getElementById("startBtn");
+
+  btn.style.display = "none";
+
+  if (currentGame === "reaction") reactionGame();
+  if (currentGame === "clicker") clickerGame();
+  if (currentGame === "football") footballGame();
+  if (currentGame === "memory") memoryGame();
+  if (currentGame === "number") numberGame();
+  if (currentGame === "wheel") wheelGame();
+}
+
+/* REACTION */
+
+function reactionGame() {
+  const area = document.getElementById("gameArea");
+
+  area.innerHTML = "Жди зелёный сигнал...";
+
+  const delay = 1500 + Math.random() * 3500;
+
+  let ready = false;
+  const start = performance.now();
+
+  timer = setTimeout(() => {
+    ready = true;
+    const greenTime = performance.now();
+
+    area.innerHTML = `
+      <button id="target" aria-label="Нажми на зелёную кнопку"></button>
+    `;
+
+    document.getElementById("target").onclick = () => {
+      if (!ready) return;
+
+      const result = Math.round(performance.now() - greenTime);
+
+      area.innerHTML = `
+        <h2 style="color:#00e5ff;font-size:40px">${result} ms</h2>
+        <p>Твоя скорость реакции!</p>
+      `;
+
+      showAgain();
+    };
+  }, delay);
+}
+
+/* CLICKER */
+
+function clickerGame() {
+  const area = document.getElementById("gameArea");
+
+  clicks = 0;
+  let seconds = 10;
+
+  area.innerHTML = `
+    <h2 id="clickScore">0</h2>
+    <p id="clickTimer">Время: 10 сек.</p>
+    <button class="game-action" id="clickButton">ЖМИ!</button>
+  `;
+
+  document.getElementById("clickButton").onclick = () => {
+    if (seconds > 0) {
+      clicks++;
+      document.getElementById("clickScore").textContent = clicks;
+    }
+  };
+
+  timer = setInterval(() => {
+    seconds--;
+    document.getElementById("clickTimer").textContent =
+      "Время: " + seconds + " сек.";
+
+    if (seconds <= 0) {
+      clearInterval(timer);
+      area.innerHTML = `
+        <h2 style="font-size:40px;color:#00e5ff">${clicks}</h2>
+        <p>Нажатий за 10 секунд!</p>
+      `;
+      showAgain();
+    }
+  }, 1000);
+}
+
+/* FOOTBALL */
+
+function footballGame() {
+  const area = document.getElementById("gameArea");
+
+  let score = 0;
+  let shots = 0;
+
+  area.innerHTML = `
+    <div style="font-size:55px">🥅</div>
+    <h2 id="footballScore">Голы: 0</h2>
+    <p id="footballShots">Удары: 0 / 5</p>
+    <button class="game-action" id="shoot">⚽ УДАРИТЬ!</button>
+  `;
+
+  document.getElementById("shoot").onclick = () => {
+    if (shots >= 5) return;
+
+    shots++;
+
+    const goal = Math.random() > 0.45;
+
+    if (goal) score++;
+
+    document.getElementById("footballScore").textContent =
+      "Голы: " + score;
+
+    document.getElementById("footballShots").textContent =
+      "Удары: " + shots + " / 5";
+
+    if (shots === 5) {
+      area.innerHTML = `
+        <h2 style="font-size:40px;color:#00e5ff">${score} / 5</h2>
+        <p>${score >= 3 ? "Отличная игра!" : "Попробуй ещё раз!"}</p>
+      `;
+      showAgain();
+    }
+  };
+}
+
+/* MEMORY */
+
+function memoryGame() {
+  const area = document.getElementById("gameArea");
+
+  const colors = ["🔴","🔵","🟢","🟡"];
+
+  memorySequence = Array.from({length:4}, () =>
+    colors[Math.floor(Math.random()*4)]
+  );
+
+  memoryPosition = 0;
+
+  area.innerHTML = `
+    <h2>Запомни последовательность:</h2>
+    <h1 id="memoryDisplay" style="font-size:35px;margin:20px"></h1>
+  `;
+
+  const display = document.getElementById("memoryDisplay");
+  let index = 0;
+
+  const show = () => {
+    if (index < memorySequence.length) {
+      display.textContent = memorySequence[index];
+      index++;
+      timer = setTimeout(show, 900);
+    } else {
+      display.textContent = "Теперь повтори!";
+      setTimeout(memoryInput, 600);
+    }
+  };
+
+  function memoryInput() {
+    area.innerHTML = `
+      <h2>Выбери цвета по порядку</h2>
+      <div style="display:flex;gap:10px;justify-content:center;margin:20px">
+        ${colors.map(c => `
+          <button class="game-action" onclick="memoryPick('${c}')">${c}</button>
+        `).join("")}
+      </div>
+      <p id="memoryResult">0 / 4</p>
+    `;
+
+    window.memoryPick = (color) => {
+      if (color !== memorySequence[memoryPosition]) {
+        area.innerHTML = "<h2>Не совсем! Попробуй ещё раз.</h2>";
+        showAgain();
+        return;
+      }
+
+      memoryPosition++;
+
+      document.getElementById("memoryResult").textContent =
+        memoryPosition + " / 4";
+
+      if (memoryPosition === 4) {
+        area.innerHTML = "<h2 style='color:#00e5ff'>ПОБЕДА! 🏆</h2>";
+        showAgain();
+      }
+    };
+  }
+
+  show();
+}
+
+/* NUMBER */
+
+function numberGame() {
+  const area = document.getElementById("gameArea");
+
+  const answer = Math.floor(Math.random() * 10) + 1;
+
+  area.innerHTML = `
+    <h2>Угадай число от 1 до 10</h2>
+    <input id="guess" type="number" min="1" max="10"
+      placeholder="Твоё число"
+      style="width:100px;padding:12px;margin:15px;background:#080b12;color:white;border:1px solid #387cff;border-radius:8px">
+    <button class="game-action" onclick="checkNumber(${answer})">ПРОВЕРИТЬ</button>
+    <p id="numberResult" style="margin-top:15px"></p>
+  `;
+
+  window.checkNumber = (answer) => {
+    const guess = Number(document.getElementById("guess").value);
+    const result = document.getElementById("numberResult");
+
+    if (!Number.isInteger(guess) || guess < 1 || guess > 10) {
+      result.textContent = "Введи число от 1 до 10!";
+      return;
+    }
+
+    if (guess === answer) {
+      result.textContent = "🏆 Правильно! Ты победил!";
+      showAgain();
+    } else {
+      result.textContent = guess < answer ? "Больше!" : "Меньше!";
+    }
+  };
+}
+
+/* WHEEL */
+
+function wheelGame() {
+  const area = document.getElementById("gameArea");
+
+  area.innerHTML = `
+    <div style="font-size:75px">🎡</div>
+    <h2>Готов испытать удачу?</h2>
+    <button class="game-action" onclick="spinWheel()">КРУТИТЬ!</button>
+    <p id="wheelResult" style="margin-top:15px"></p>
+  `;
+
+  window.spinWheel = () => {
+    const prizes = ["🏆 Победа!", "⭐ Супер!", "🔥 Отлично!", "🎮 Ещё попытка!"];
+    document.getElementById("wheelResult").textContent =
+      prizes[Math.floor(Math.random() * prizes.length)];
+    showAgain();
+  };
+}
+
+function showAgain() {
+  const btn = document.getElementById("startBtn");
+  btn.style.display = "inline-block";
+  btn.textContent = "ИГРАТЬ ЕЩЁ";
+}
+
+renderGames();
+
+</script>
+
+</body>
+</html>
